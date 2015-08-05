@@ -14,7 +14,7 @@ line rendering in Nuke.
 # python
 import sys
 import os
-import multiprocessing
+# import multiprocessing
 import subprocess
 import logging
 import threading

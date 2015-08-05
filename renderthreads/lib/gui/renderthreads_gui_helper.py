@@ -191,12 +191,12 @@ def load_ui_type(ui_file):
         # PySide
         from PySide import QtGui
         from PySide import QtCore
-        from PySide import QtUiTools
+        # from PySide import QtUiTools
         import pysideuic
 
     except Exception as exception_instance:
         # log
-        logger.debug('Import failed: {0}'.format(exception_instance))
+        print 'Import failed: {0}'.format(exception_instance)
         # return None
         return None
 

@@ -18,11 +18,11 @@ import logging
 import Queue
 import time
 import hashlib
-import multiprocessing
+# import multiprocessing
 # PySide
 from PySide import QtGui
 from PySide import QtCore
-
+from renderthreads.utils import determineNumberOfCPUs
 
 # Import variable
 do_reload = True
@@ -225,7 +225,7 @@ class ThreadManager(QtCore.QObject):
         self.logger = renderthreads_logging.get_logger(self.__class__.__name__)
 
         # max_threads
-        self.max_threads = multiprocessing.cpu_count()
+        self.max_threads = determineNumberOfCPUs()
 
         # thread_count
         self.thread_count = self.max_threads

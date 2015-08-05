@@ -14,7 +14,8 @@ additional specific ui.
 #  Python
 import logging
 import functools
-import multiprocessing
+# import multiprocessing
+from renderthreads.utils import determineNumberOfCPUs
 #  PySide
 from PySide import QtGui
 from PySide import QtCore
@@ -656,7 +657,7 @@ that defaults to 0 if none given. Will override preferences when in interactive 
 
     # flg_m
     tooltip = 'Set threads count.'
-    cpu_count = multiprocessing.cpu_count()
+    cpu_count = determineNumberOfCPUs()
     wdgt_parameter = QtGui.QSpinBox(parent=wdgt)
     wdgt_parameter.setMinimum(1)
     wdgt_parameter.setMaximum(cpu_count)
