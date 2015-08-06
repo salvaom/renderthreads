@@ -180,9 +180,12 @@ class RenderCommand(QtCore.QObject):
                 creation_flags = subprocess.CREATE_NEW_CONSOLE
 
             # process
-            self.process = subprocess.Popen('{0}'.format(self.command),
-                                            env=env_dict,
-                                            creationflags=creation_flags)
+            self.process = subprocess.Popen(
+                '{0}'.format(self.command),
+                env=env_dict,
+                creationflags=creation_flags,
+                shell=True
+            )
 
             # communicate
             self.process.communicate()
